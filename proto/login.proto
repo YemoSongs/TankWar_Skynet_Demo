@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package Login; 
+message login { 
+    int32 id = 1; 
+    string pw = 2;        
+    int32 result = 3; 
+ }
+
+message kick{
+    string reason = 1;
+}
+
+
+
+

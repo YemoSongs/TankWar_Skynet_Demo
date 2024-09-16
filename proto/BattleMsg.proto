@@ -1,0 +1,36 @@
+syntax = "proto3";
+
+package BattleMsg;
+
+//坦克信息
+message TankInfo{
+	string id = 1;		//玩家id
+	int32 camp = 2;		//阵营
+	int32 hp = 3;		//生命值
+
+	float x = 4;		//位置
+	float y = 5;
+	float z = 6;
+	float ex = 7;		//旋转
+	float ey = 8;
+	float ez = 9;
+}
+
+//进入战场（服务端推送）
+
+message MsgEnterBattle{
+	repeated TankInfo tanks = 1;	//坦克列表
+	int32 mapId = 2;				//地图，只有一张
+}
+
+
+//战斗结果（服务端推送）
+message MsgBattleResult{
+	int32 winCamp = 1;		//获胜的阵营如果 winCamp等于1，说明红方取得胜利；如果为2，说明蓝方取得胜利。
+}
+
+//玩家退出（服务端推送）
+message MsgLeaveBattle{
+	string id = 1;		//玩家id
+}
+

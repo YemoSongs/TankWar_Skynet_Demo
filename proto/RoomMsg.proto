@@ -1,0 +1,57 @@
+syntax = "proto3";
+
+package RoomMsg;
+
+
+message MsgGetAchieve{
+	int32 win = 1;
+	int32 lost = 2;
+}
+
+message RoomInfo{
+	int32 id = 1;		//房间id
+	int32 count = 2;	//人数
+	int32 status = 3;	//状态 0-准备中 1-战斗中
+}
+
+
+message MsgGetRoomList{
+	repeated RoomInfo rooms = 1;	//房间列表
+}
+
+message MsgCreateRoom{
+	int32 result = 1;		//0-成功 1-失败
+}
+
+message MsgEnterRoom{
+	int32 id = 1;			//房间id
+	int32 result = 2;		//0-成功 1-失败
+}
+
+
+message PlayerInfo{
+	string id = 1;			//账号
+	int32 camp = 2;			//阵营
+	int32 win = 3;			//胜利数
+	int32 lost = 4;			//失败数
+	int32 isOwner = 5;		//是否是房主 1-是 0-否
+}
+
+
+message MsgGetRoomInfo{
+	repeated PlayerInfo players = 1;	//房间内的玩家列表
+}
+
+
+message MsgLeaveRoom{
+	int32 result = 1;		//0-成功 1-失败
+}
+
+
+message MsgStartBattle{
+	int32 result = 1;		//0-成功 1-失败
+}
+
+
+
+

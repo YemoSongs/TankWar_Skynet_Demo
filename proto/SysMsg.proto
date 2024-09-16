@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package SysMsg;
+
+message MsgPing{
+
+}
+
+message MsgPong{
+
+}

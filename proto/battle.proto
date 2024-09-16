@@ -1,0 +1,79 @@
+syntax = "proto3";
+
+package Battle; 
+
+message work {
+    int32 coin = 1;
+    int32 result = 2;
+    string reason = 3; 
+}
+
+
+message playerinfo{
+    int32 id = 1; 
+    int32 x = 2;
+    int32 y = 3;
+    int32 size = 4;
+}
+
+message foodinfo{
+    int32 fid = 1; 
+    int32 x = 2;
+    int32 y = 3;
+}
+
+
+
+message enter { 
+    playerinfo player = 1;
+    int32 result = 2; 
+    string reason = 3;        
+}
+
+
+
+message balllist{
+    repeated playerinfo players = 1;
+}
+
+message foodlist{
+    repeated foodinfo foods = 1;
+}
+
+message addfood{
+    int32 fid = 1;
+    int32 x = 2;
+    int32 y = 3;
+}
+
+message shift{
+    int32 x = 1;
+    int32 y = 2;
+}
+
+message move{
+    int32 id = 1;
+    int32 x = 2;
+    int32 y = 3;
+}
+
+message eat{
+    int32 id = 1;
+    int32 fid = 2;
+    int32 size = 3;
+}
+
+
+message leave{
+    int32 id = 1;
+}
+
+
+
+
+
+
+
+
+
+

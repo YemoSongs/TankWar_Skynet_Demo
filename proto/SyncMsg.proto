@@ -1,0 +1,51 @@
+syntax = "proto3";
+
+package SyncMsg;
+
+
+//同步坦克信息
+message MsgSyncTank{
+	//位置，旋转，炮塔旋转
+	float x = 1;
+	float y = 2;
+	float z = 3;
+	float ex = 4;
+	float ey = 5;
+	float ez = 6;
+	float turretY = 7;
+
+	//服务端补充
+	string id = 8;		//哪个坦克
+}
+
+
+//开火
+message MsgFire{
+	//炮弹初始位置，旋转
+	float x = 1;
+	float y = 2;
+	float z = 3;
+	float ex = 4;
+	float ey = 5;
+	float ez = 6;
+	//服务端补充
+	string id = 7;
+}
+
+
+//击中
+message MsgHit{
+	//击中谁
+	string targetId = 1;
+	//击中点
+	float x = 2;
+	float y = 3;
+	float z = 4;
+	//服务端补充
+	string id = 5;		//哪个坦克
+	int32 hp = 6;		//被击中坦克血量
+	int32 damage = 7;	//受到的伤害
+}
+
+
+
